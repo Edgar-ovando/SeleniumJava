@@ -1,31 +1,43 @@
 package Selenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 public class TestSelenium {
+
     private WebDriver driver;
 
     @BeforeTest
     public void loadDriver(){
+        //Configurar Web driver Manager
+        WebDriverManager.chromedriver().setup();
+
         //Configurar la ruta del chromedriver
-        System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
+        //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
+
         //Crear una instancia
         driver = new ChromeDriver();
+
     }
 
     @Test
     public void testBrowser(){
         driver.get("https://www.google.com/");
-        String titulo = driver.getTitle();
+
+        String titulo =  driver.getTitle();
         Assert.assertEquals("Google",titulo);
     }
 

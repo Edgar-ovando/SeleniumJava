@@ -23,11 +23,10 @@ public class TestSeleniumII {
         //Configurar Web driver Manager
         WebDriverManager.chromedriver().setup();
 
-
+        //Configurar para Chromium
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-
-
+        options.setBinary("/usr/bin/chromium"); // point to Chromium
+        options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage");
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");

@@ -3,6 +3,7 @@ package Selenium;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -18,14 +19,22 @@ public class TestSeleniumII {
 
     @BeforeTest
     public void loadDriver(){
+
         //Configurar Web driver Manager
         WebDriverManager.chromedriver().setup();
+
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+
+
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
+
 
     }
 

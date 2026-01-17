@@ -50,7 +50,7 @@ public class TestSeleniumII {
         driver.get("https://onecompiler.com/html/3xfmfsrwk");
 
         // Encontrar el button y darle click
-        WebElement runbtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='MuiGrid-root MuiGrid-direction-xs-row mui-1n5khr6']/div//button[text()='Run ']")));
+        WebElement runbtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='hidden sm:flex flex-row justify-between items-center bg-muted']/div[@class='flex items-center justify-center sm:justify-end']//button[text()='RUN ']")));
         runbtn.click();
 
         //Alerta appear

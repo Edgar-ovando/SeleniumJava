@@ -17,11 +17,20 @@ public class TestSeleniumII {
 
     private WebDriver driver;
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeMethod
     public void loadDriver() throws Exception {
-        //Configurar Web driver Manager
-        //WebDriverManager.chromedriver().setup();
 
+        //Configurar Web driver Manager
+        WebDriverManager.chromedriver().setup();
+
+        //Crear una instancia
+        driver = new ChromeDriver();
+
+        //Configurar la ruta del chromedriver
+        //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
+
+
+        /*
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
@@ -31,13 +40,7 @@ public class TestSeleniumII {
         driver = new RemoteWebDriver(
                 new URL(System.getenv("SELENIUM_HUB_URL")),
                 options
-        );
-
-        //Configurar la ruta del chromedriver
-        //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
-
-        //Crear una instancia
-        //driver = new ChromeDriver();
+        ); */
     }
 
     // -- Window ALERT
@@ -131,7 +134,7 @@ public class TestSeleniumII {
     }
 
     //Cerrar Navegador
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod
     public void closeBrowser(){
         if(driver != null){
             driver.quit();

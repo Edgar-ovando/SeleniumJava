@@ -18,28 +18,32 @@ public class TestSelenium {
 
     private WebDriver driver;
 
-    @BeforeMethod (alwaysRun = true)
+    @BeforeMethod
     public void loadDriver() throws Exception{
 
         //Configurar Web driver Manager
-        //WebDriverManager.chromedriver().setup();
-
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless"); // Run without GUI
-        options.addArguments("--no-sandbox"); // Needed in Docker
-        options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
-
-        // Use remote Selenium Hub
-        driver = new RemoteWebDriver(
-                new URL(System.getenv("SELENIUM_HUB_URL")),
-                options
-        );
+        WebDriverManager.chromedriver().setup();
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        //driver = new ChromeDriver();
+        driver = new ChromeDriver();
+
+
+        /*
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless"); // Run without GUI
+            options.addArguments("--no-sandbox"); // Needed in Docker
+            options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
+
+            // Use remote Selenium Hub
+            driver = new RemoteWebDriver(
+                    new URL(System.getenv("SELENIUM_HUB_URL")),
+                    options
+            );
+
+         */
 
     }
 
@@ -58,7 +62,6 @@ public class TestSelenium {
         searchbox.sendKeys("Historia de Linux");
         searchbox.submit();
     }
-
 
     // -- Localizadores Xpath
     @Test
@@ -88,7 +91,7 @@ public class TestSelenium {
     }
 
     //Cerrar Navegador
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod
     public void closeBrowser(){
         if(driver != null){
             driver.quit();

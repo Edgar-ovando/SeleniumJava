@@ -29,18 +29,16 @@ public class TestSeleniumII {
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
-
-
+        String seleniumHubUrl = System.getProperty("selenium.hub.url", "http://localhost:8084/wd/hub");
+        driver = new RemoteWebDriver(new URL(seleniumHubUrl), options);
+        
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        // Use remote Selenium Hub
-        driver = new RemoteWebDriver(
-                new URL(System.getenv("SELENIUM_HUB_URL")),
-                options
-        );
+        //driver = new ChromeDriver();
+
 
 
     }

@@ -23,11 +23,17 @@ public class TestSeleniumII {
         //Configurar Web driver Manager
         WebDriverManager.chromedriver().setup();
 
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Run without GUI
+        options.addArguments("--no-sandbox"); // Needed in Docker
+        options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
+
+
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
 
 
     }

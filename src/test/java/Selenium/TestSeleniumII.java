@@ -136,7 +136,7 @@ public class TestSeleniumII {
     }
 
     //Cerrar Navegador
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void closeBrowser(){
         if(driver != null){
             driver.quit();

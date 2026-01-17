@@ -18,7 +18,7 @@ public class TestSeleniumII {
     private WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
-    public void loadDriver() throws Exception{
+    public void loadDriver() throws Exception {
         //Configurar Web driver Manager
         //WebDriverManager.chromedriver().setup();
 

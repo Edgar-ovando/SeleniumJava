@@ -23,20 +23,11 @@ public class TestSeleniumII {
         //Configurar Web driver Manager
         WebDriverManager.chromedriver().setup();
 
-        //Configurar para Chromium
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");            // run without GUI
-        options.addArguments("--no-sandbox");          // sandboxing disabled in containers
-        options.addArguments("--disable-dev-shm-usage"); // avoid /dev/shm crash
-        options.addArguments("--disable-gpu");         // optional
-        options.addArguments("--window-size=1920,1080");
-
-
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
 
 
     }

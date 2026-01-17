@@ -109,7 +109,7 @@ public class TestSeleniumII {
         driver.get("https://www.facebook.com/");
 
         //Implicit Wait
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //Explicit wait
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));

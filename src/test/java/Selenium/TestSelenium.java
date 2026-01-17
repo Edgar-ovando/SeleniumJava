@@ -5,6 +5,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
@@ -12,6 +13,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
+import java.net.URL;
 import java.time.Duration;
 
 import static io.restassured.RestAssured.baseURI;
@@ -22,10 +24,10 @@ public class TestSelenium {
     private WebDriver driver;
 
     @BeforeTest
-    public void loadDriver(){
+    public void loadDriver() throws Exception{
 
         //Configurar Web driver Manager
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
@@ -39,7 +41,12 @@ public class TestSelenium {
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        driver = new ChromeDriver(options);
+        // Use remote Selenium Hub
+         driver = new RemoteWebDriver(
+                new URL(System.getenv("SELENIUM_HUB_URL")),
+                options
+        );
+        //driver = new ChromeDriver(options);
 
     }
 

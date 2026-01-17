@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,6 +12,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+
+import java.net.URL;
 import java.time.Duration;
 
 public class TestSeleniumII {
@@ -18,10 +21,8 @@ public class TestSeleniumII {
     private WebDriver driver;
 
     @BeforeTest
-    public void loadDriver(){
-
-        //Configurar Web driver Manager
-        WebDriverManager.chromedriver().setup();
+    public void loadDriver() throws Exception{
+        //WebDriverManager.chromedriver().setup();
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
@@ -29,11 +30,17 @@ public class TestSeleniumII {
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
 
+
+
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        driver = new ChromeDriver(options);
+        // Use remote Selenium Hub
+        driver = new RemoteWebDriver(
+                new URL(System.getenv("SELENIUM_HUB_URL")),
+                options
+        );
 
 
     }

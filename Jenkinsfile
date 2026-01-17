@@ -1,7 +1,7 @@
 pipeline{
     agent any
         environment {
-            SELENIUM_HUB_URL = 'http://selenium:4444/wd/hub'  // Adjust if needed
+            SELENIUM_HUB_URL = 'http://selenium:8084/wd/hub'  // Adjust if needed
         }
     stages{
         stage('Build'){

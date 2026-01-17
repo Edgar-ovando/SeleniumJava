@@ -6,24 +6,19 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
 import java.net.URL;
-import java.time.Duration;
-
-import static io.restassured.RestAssured.baseURI;
-import static io.restassured.RestAssured.given;
 
 public class TestSelenium {
 
     private WebDriver driver;
 
-    @BeforeTest
+    @BeforeMethod (alwaysRun = true)
     public void loadDriver() throws Exception{
 
         //Configurar Web driver Manager
@@ -93,7 +88,7 @@ public class TestSelenium {
     }
 
     //Cerrar Navegador
-    @AfterTest(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         if(driver != null){
             driver.quit();

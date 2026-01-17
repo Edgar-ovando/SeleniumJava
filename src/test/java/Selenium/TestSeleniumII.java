@@ -8,9 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.net.URL;
 import java.time.Duration;
@@ -19,7 +17,7 @@ public class TestSeleniumII {
 
     private WebDriver driver;
 
-    @BeforeTest
+    @BeforeMethod(alwaysRun = true)
     public void loadDriver() throws Exception{
         //Configurar Web driver Manager
         //WebDriverManager.chromedriver().setup();
@@ -35,11 +33,8 @@ public class TestSeleniumII {
                 options
         );
 
-
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
-
-
 
         //Crear una instancia
         //driver = new ChromeDriver();
@@ -136,7 +131,7 @@ public class TestSeleniumII {
     }
 
     //Cerrar Navegador
-    @AfterTest(alwaysRun = true)
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         if(driver != null){
             driver.quit();

@@ -22,16 +22,16 @@ public class TestSelenium {
     public void loadDriver() throws Exception{
 
         //Configurar Web driver Manager
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
         //Crear una instancia
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
 
 
-        /*
+
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless"); // Run without GUI
             options.addArguments("--no-sandbox"); // Needed in Docker
@@ -43,7 +43,7 @@ public class TestSelenium {
                     options
             );
 
-         */
+
 
     }
 

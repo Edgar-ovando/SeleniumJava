@@ -30,20 +30,16 @@ public class TestSelenium {
         //Crear una instancia
         //driver = new ChromeDriver();
 
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Run without GUI
+        options.addArguments("--no-sandbox"); // Needed in Docker
+        options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
-
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless"); // Run without GUI
-            options.addArguments("--no-sandbox"); // Needed in Docker
-            options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
-
-            // Use remote Selenium Hub
-            driver = new RemoteWebDriver(
-                    new URL(System.getenv("SELENIUM_HUB_URL")),
-                    options
-            );
-
-
+        // Use remote Selenium Hub
+        driver = new RemoteWebDriver(
+                new URL(System.getenv("SELENIUM_HUB_URL")),
+                options
+        );
 
     }
 

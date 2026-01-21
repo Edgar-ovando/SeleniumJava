@@ -35,12 +35,16 @@ public class TestSeleniumII {
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
+        driver = new ChromeDriver(options);
+
+        /*
+
         // Use remote Selenium Hub
         driver = new RemoteWebDriver(
                 new URL("http://selenium:4444/wd/hub"),
                 //new URL(System.getenv("SELENIUM_HUB_URL")),
                 options);
-
+        */
 
     }
 

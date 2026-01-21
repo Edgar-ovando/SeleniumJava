@@ -10,11 +10,15 @@ pipeline {
             agent {
                 docker {
                      image 'maven:3.9.6-eclipse-temurin-17'
-                     args '-u root:root'
+                     args '--shm-size=2g -u root:root'
                 }
             }
             steps {
-                sh 'mvn test -Dselenium.remote=true'
+                   sh '''
+                        apt-get update
+                        apt-get install -y chromium chromium-driver
+                        mvn test
+                   '''
 
             }
         }

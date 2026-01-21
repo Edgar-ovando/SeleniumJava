@@ -13,8 +13,19 @@ pipeline {
         }
 
         stage('Test') {
+            agent {
+                docker {
+                    image 'selenium/standalone-chrome:latest'
+                    args '-u root:root'
+                    }
+                  }
             steps {
-                sh "mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL"
+                sh '''
+                    apt-get update && apt-get install -y maven
+                    mvn test
+                '''
+
+                //sh "mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL"
             }
         }
 

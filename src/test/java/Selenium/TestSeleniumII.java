@@ -21,15 +21,15 @@ public class TestSeleniumII {
     public void loadDriver() throws Exception {
 
         //Configurar Web driver Manager
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
 
         //Crear una instancia
-        driver = new ChromeDriver();
+        //driver = new ChromeDriver();
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
-        /*
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
@@ -40,7 +40,7 @@ public class TestSeleniumII {
                 new URL("http://selenium:4444/wd/hub"),
                 //new URL(System.getenv("SELENIUM_HUB_URL")),
                 options);
-         */
+
 
     }
 

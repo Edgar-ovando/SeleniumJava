@@ -1,18 +1,7 @@
 pipeline {
     agent any
-
-    environment {
-        SELENIUM_HUB_URL = 'http://selenium:4444/wd/hub'
-    }
-
     stages {
         stage('Build') {
-            agent {
-                docker {
-                    image 'maven:3.9.6-openjdk-11'
-                    args '-u root:root'
-                }
-            }
             steps {
                 sh 'mvn clean install'
             }

@@ -20,7 +20,6 @@ public class TestSelenium {
     // PRUEBA WEBHOOK -> Github/Jenkins -> PUSH
     // PRUEBA WEBHOOK -> Github/Jenkins -> PUSH
     // PRUEBA WEBHOOK -> Github/Jenkins -> PUSH
-    // PRUEBA WEBHOOK -> Github/Jenkins -> PUSH
 
     private WebDriver driver;
 
@@ -36,23 +35,17 @@ public class TestSelenium {
         //Crear una instancia
         //driver = new ChromeDriver();
 
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
-        driver = new ChromeDriver(options);
-
-        /*
         // Use remote Selenium Hub
         driver = new RemoteWebDriver(
                 new URL("http://selenium:4444/wd/hub"),
                 //new URL(System.getenv("SELENIUM_HUB_URL")),
                 options
         );
-
-         */
 
     }
 

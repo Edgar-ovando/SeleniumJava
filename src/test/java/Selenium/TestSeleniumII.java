@@ -21,7 +21,7 @@ public class TestSeleniumII {
     public void loadDriver() throws Exception {
 
         //Configurar Web driver Manager
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
 
         //Crear una instancia
         //driver = new ChromeDriver();
@@ -29,20 +29,17 @@ public class TestSeleniumII {
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
-        driver = new ChromeDriver(options);
-
         // Use remote Selenium Hub
-        /*
         driver = new RemoteWebDriver(
-                new URL(System.getenv("SELENIUM_HUB_URL")),
+                new URL("http://selenium:4444/wd/hub"),
+                //new URL(System.getenv("SELENIUM_HUB_URL")),
                 options
-        );*/
+        );
     }
 
     // -- Window ALERT

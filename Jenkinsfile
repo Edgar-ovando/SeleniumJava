@@ -14,7 +14,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'mvn test'
+                sh 'mvn test -Dselenium.remote=true'
 
             }
         }

@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    environment {
-        //SELENIUM_HUB_URL = 'http://selenium:4444/wd/hub'
-    }
-
     stages {
         stage('Build') {
             steps {
@@ -14,13 +10,13 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                     image 'selenium/standalone-chrome:latest'
+                     image 'maven:3.9.6-eclipse-temurin-17'
                      args '-u root:root'
                 }
             }
             steps {
                 sh 'mvn test'
-                //sh "mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL"
+
             }
         }
 

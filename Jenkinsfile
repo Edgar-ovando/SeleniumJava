@@ -22,9 +22,8 @@ pipeline {
             steps {
                 sh '''
                     apt-get update && apt-get install -y maven
-                    mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL
+                    mvn test -Dselenium.hub.url="$SELENIUM_HUB_URL"
                 '''
-
                 //sh "mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL"
             }
         }

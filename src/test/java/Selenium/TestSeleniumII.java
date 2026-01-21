@@ -21,7 +21,7 @@ public class TestSeleniumII {
     public void loadDriver() throws Exception {
 
         //Configurar Web driver Manager
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
 
         //Crear una instancia
         //driver = new ChromeDriver();

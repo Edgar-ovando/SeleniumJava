@@ -16,7 +16,11 @@ pipeline {
             steps {
                 sh '''
                     apt-get update
-                    apt-get install -y chromium chromium-driver
+                    apt-get install -y chromium chromium-driver \
+                        libnss3 libx11-xcb1 libxcomposite1 libxrandr2 libxdamage1 libxfixes3 \
+                        libasound2 libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0 fonts-liberation xdg-utils
+                    export CHROME_BIN=/usr/bin/chromium
+                    export CHROME_DRIVER=/usr/bin/chromedriver
                     mvn test
                 '''
 

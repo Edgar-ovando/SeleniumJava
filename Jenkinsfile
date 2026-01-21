@@ -1,6 +1,5 @@
 pipeline {
     agent any
-
     environment {
         //SELENIUM_HUB_URL = 'http://selenium:4444/wd/hub'
     }
@@ -13,7 +12,7 @@ pipeline {
         }
 
         stage('Test') {
-            agent{
+            agent {
                 docker {
                      image 'selenium/standalone-chrome:latest'
                      args '-u root:root'

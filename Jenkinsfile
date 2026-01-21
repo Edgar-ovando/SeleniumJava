@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        SELENIUM_HUB_URL = 'http://selenium:4444/wd/hub'
+        //SELENIUM_HUB_URL = 'http://selenium:4444/wd/hub'
     }
 
     stages {
@@ -13,8 +13,15 @@ pipeline {
         }
 
         stage('Test') {
+            agent{
+                docker {
+                     image 'selenium/standalone-chrome:latest'
+                     args '-u root:root'
+                }
+            }
             steps {
-                sh "mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL"
+                sh 'mvn test'
+                //sh "mvn test -Dselenium.hub.url=$SELENIUM_HUB_URL"
             }
         }
 

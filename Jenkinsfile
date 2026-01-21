@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             agent {
                 docker {
-                    image 'selenium/standalone-chrome:latest'
+                    image 'selenium/standalone-chrome:arm64'
                     args '-u root:root'
                 }
             }

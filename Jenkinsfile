@@ -42,7 +42,7 @@ pipeline {
                     chmod +x /usr/local/bin/chromedriver
 
                     # Ejecutar tests
-                    mvn test -Dselenium.hub.url="$SELENIUM_HUB_URL"
+                    mvn test"
                 '''
             }
         }

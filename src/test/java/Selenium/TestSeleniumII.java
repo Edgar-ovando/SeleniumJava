@@ -29,16 +29,20 @@ public class TestSeleniumII {
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
+        driver = new ChromeDriver(options);
+
         // Use remote Selenium Hub
+        /*
         driver = new RemoteWebDriver(
                 new URL(System.getenv("SELENIUM_HUB_URL")),
                 options
-        );
+        );*/
     }
 
     // -- Window ALERT

@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean install'
+                sh 'mvn clean compile'
             }
         }
         stage('Test') {
@@ -14,11 +14,11 @@ pipeline {
                 }
             }
             steps {
-                   sh '''
-                        apt-get update
-                        apt-get install -y chromium chromium-driver
-                        mvn test
-                   '''
+                sh '''
+                    apt-get update
+                    apt-get install -y chromium chromium-driver
+                    mvn test
+                '''
 
             }
         }

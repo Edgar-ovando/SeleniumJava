@@ -36,8 +36,7 @@ public class TestSeleniumII {
 
         // Use remote Selenium Hub
         driver = new RemoteWebDriver(
-                new URL("http://selenium:4444/wd/hub"),
-                //new URL(System.getenv("SELENIUM_HUB_URL")),
+                new URL(System.getenv("SELENIUM_HUB_URL")),
                 options
         );
     }

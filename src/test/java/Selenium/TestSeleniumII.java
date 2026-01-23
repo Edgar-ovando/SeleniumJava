@@ -21,14 +21,15 @@ public class TestSeleniumII {
     public void loadDriver() throws Exception {
 
         //Configurar Web driver Manager
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
 
         //Crear una instancia
-        //driver = new ChromeDriver();
+        driver = new ChromeDriver();
 
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
+        /*
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
@@ -40,14 +41,15 @@ public class TestSeleniumII {
                 //new URL(System.getenv("SELENIUM_HUB_URL")),
                 options
         );
+        */
     }
 
     // -- Window ALERT
     @Test
-    public void windowAlert(){
+    public void windowAlert() {
 
         //Explicit wait
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         driver.get("https://onecompiler.com/html/3xfmfsrwk");
 
@@ -58,14 +60,14 @@ public class TestSeleniumII {
         //Alerta appear
         wait.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
-        System.out.println("Contenido de la alerta: "+alert.getText());
+        System.out.println("Contenido de la alerta: " + alert.getText());
         alert.accept();
 
     }
 
     // Window PESTAÑAS
     @Test
-    public void windowPestaña(){
+    public void windowPestaña() {
         driver.get("https://www.facebook.com/");
         String original = driver.getWindowHandle();
 
@@ -82,7 +84,7 @@ public class TestSeleniumII {
 
     //Window iFrame Pagina web dentro de otra pagina web
     @Test
-    public void testIFrame(){
+    public void testIFrame() {
         driver.get("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe");
 
         driver.switchTo().frame("iframeResult");
@@ -96,8 +98,8 @@ public class TestSeleniumII {
 
     //Espera Explicita
     @Test
-    public void testExplicito(){
-        WebDriverWait wait  = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public void testExplicito() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.get("https://www.facebook.com/");
 
         WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
@@ -107,20 +109,20 @@ public class TestSeleniumII {
 
     //Espera Implicita
     @Test
-    public void testImplicito(){
+    public void testImplicito() {
         driver.get("https://www.facebook.com/");
 
         //Implicit Wait
-       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //Explicit wait
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement login = wait.until(ExpectedConditions.elementToBeClickable(By.name("login")));
     }
 
     //Assert TestNG
     @Test
-    public void testAssertion(){
+    public void testAssertion() {
         driver.get("https://www.google.com");
         driver.manage().window().maximize();
 
@@ -128,14 +130,14 @@ public class TestSeleniumII {
         String actualTitle = driver.getTitle();
 
         //Assert
-        Assert.assertEquals(actualTitle,expectedTitle);
+        Assert.assertEquals(actualTitle, expectedTitle);
 
     }
 
     //Cerrar Navegador
     @AfterMethod
-    public void closeBrowser(){
-        if(driver != null){
+    public void closeBrowser() {
+        if (driver != null) {
             driver.quit();
         }
     }

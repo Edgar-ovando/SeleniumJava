@@ -4,14 +4,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
-import java.net.URL;
 import java.time.Duration;
+
 
 public class TestSeleniumII {
 
@@ -23,18 +21,18 @@ public class TestSeleniumII {
         //Configurar Web driver Manager
         WebDriverManager.chromedriver().setup();
 
-        //Crear una instancia
-        driver = new ChromeDriver();
-
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
-        /*
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
+        //Crear una instancia
+        driver = new ChromeDriver(options);
+
+        /*
         // Use remote Selenium Hub
         driver = new RemoteWebDriver(
                 new URL("http://selenium:4444/wd/hub"),

@@ -5,14 +5,14 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
-import java.net.URL;
+
 
 public class TestSelenium {
 
@@ -27,16 +27,15 @@ public class TestSelenium {
         //Configurar la ruta del chromedriver
         //System.setProperty("webdriver.chrome.driver","/Users/edgar-ovando/Downloads/chromedriver-mac-arm64/chromedriver");
 
-        //Crear una instancia
-        driver = new ChromeDriver();
-
-        /*
-
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless"); // Run without GUI
         options.addArguments("--no-sandbox"); // Needed in Docker
         options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
 
+        //Crear una instancia
+        driver = new ChromeDriver(options);
+
+        /*
         // Use remote Selenium Hub
         driver = new RemoteWebDriver(
                 new URL("http://selenium:4444/wd/hub"),

@@ -1,16 +1,3 @@
-# 🧪 Selenium Test Automation Framework (Java + TestNG + Maven)
-
-![Java](https://img.shields.io/badge/Java-17-red)
-![Selenium](https://img.shields.io/badge/Selenium-4.18-green)
-![TestNG](https://img.shields.io/badge/TestNG-7.9-orange)
-![Maven](https://img.shields.io/badge/Maven-3.9-blue)
-![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
-![Cross Browser](https://img.shields.io/badge/Cross--Browser-Chrome%20%7C%20Firefox%20%7C%20Edge-purple)
-![Platform](https://img.shields.io/badge/Platform-Web-blue)
-![License](https://img.shields.io/badge/License-MIT-yellow)
-
----
-
 ## 📌 Project Overview
 
 This project is a **UI Test Automation Framework** developed using:

@@ -17,6 +17,9 @@ public class MyAccountPage extends BasePage {
     @FindBy(xpath = "//div[@class='list-group']//a[text()='Logout']")
     private WebElement lnklogout;
 
+    @FindBy(xpath="//div[@class='list-group']//a[text()='Login']")
+    private WebElement btnLogin;
+
     //Actions Methods
     public boolean isMyAccountDisplayed() {
 
@@ -29,6 +32,10 @@ public class MyAccountPage extends BasePage {
 
     public void clickLogout() {
         lnklogout.click();
+    }
+
+    public void clickLogin() {
+        btnLogin.click();
     }
 
 

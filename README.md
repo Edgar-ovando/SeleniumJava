@@ -4,19 +4,10 @@
 
 This project is a **UI Test Automation Framework** developed using:
 
-<p>
-  <img src="https://img.shields.io/badge/Java-17-red" alt="Java Badge"/>
-  <img src="https://img.shields.io/badge/Selenium-4.18-green" alt="Selenium Badge"/>
-  <img src="https://img.shields.io/badge/TestNG-7.9-orange" alt="TestNG Badge"/>
-  <img src="https://img.shields.io/badge/Maven-3.9-blue" alt="Maven Badge"/>
-  <img src="https://img.shields.io/badge/Build-Passing-brightgreen" alt="Build Badge"/>
-  <img src="https://img.shields.io/badge/Cross--Browser-Chrome%20%7C%20Firefox%20%7C%20Edge-purple" alt="Cross Browser Badge"/>
-  <img src="https://img.shields.io/badge/Platform-Web-blue" alt="Platform Badge"/>
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License Badge"/>
-</p>
-
-<hr>
-
+- Selenium WebDriver
+- Java
+- TestNG
+- Maven
 
 The framework automates test scenarios for the demo e-commerce website:
 

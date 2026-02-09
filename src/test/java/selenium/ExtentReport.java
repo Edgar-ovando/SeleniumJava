@@ -1,4 +1,4 @@
-package Selenium;
+package selenium;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -19,7 +19,11 @@ public class ExtentReport implements ITestListener {
     public ExtentTest test;  //Creating test cases entries in the report and update status of the test methods
 
     public void onStart(ITestContext context) {
-        sparkReporter = new ExtentSparkReporter("./reports/myRegressionReport.html");
+
+         String timeStamp = LocalDateTime.now()
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd_HH:mm:ss"));
+
+        sparkReporter = new ExtentSparkReporter("./reports/myRegressionReport_" + timeStamp + ".html");
 
         sparkReporter.config().setDocumentTitle("Regression Report");
         sparkReporter.config().setReportName("Regression Report ");
@@ -34,6 +38,7 @@ public class ExtentReport implements ITestListener {
         extent.setSystemInfo("os","Windows10");
         extent.setSystemInfo("Browser Name", "Chrome");
     }
+
 
     public void onTestSuccess(ITestResult result) {
         test = extent.createTest(result.getName()); //Create a new enty in the report

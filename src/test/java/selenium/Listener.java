@@ -1,4 +1,4 @@
-package Selenium;
+package selenium;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -15,6 +15,7 @@ public class Listener implements ITestListener {
     }
 
     public void onTestSuccess(ITestResult result) {
+
         System.out.println("test passed ...");
     }
     public void onTestFailure(ITestResult result) {

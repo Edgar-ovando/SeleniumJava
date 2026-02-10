@@ -19,16 +19,15 @@ import org.apache.logging.log4j.LogManager;  //Log4j
 import org.apache.logging.log4j.Logger;   //Log4j
 import org.testng.annotations.Parameters;
 
-
 public class BaseClass {
 
-    public Logger logger; //Log4j
-    public WebDriver driver;
-    public Properties p;
+     protected Logger logger; //Log4j
+     protected WebDriver driver;
+     protected Properties p;
 
     @BeforeClass
     @Parameters({"os", "browser"})
-    public void setup(String os, String browser) throws IOException {
+    public void setup(String os, String br) throws IOException {
 
         FileReader file = new FileReader("./src//test//resources//config.properties");
         p = new Properties();
@@ -36,7 +35,7 @@ public class BaseClass {
 
         logger = LogManager.getLogger(this.getClass());
 
-        switch (browser.toLowerCase())
+        switch (br.toLowerCase())
         {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
@@ -54,7 +53,7 @@ public class BaseClass {
                 break;
 
             default:
-                throw new RuntimeException("Browser not supported: " + browser);
+                throw new RuntimeException("Browser not supported: " + br);
         }
 
         driver.manage().deleteAllCookies();

@@ -19,7 +19,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.39.0</version>
+            <version>4.38.0</version>
         </dependency>
 
         <!-- TESTNG -->
@@ -43,6 +43,7 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>6.3.3</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- REPORTS -->
@@ -73,7 +74,7 @@
             <version>2.23.1</version>
         </dependency>
 
-        <!-- Commons io dependency-->
+        <!-- EXCEL -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>

@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class TC001AccountRegistrationTest extends BaseClass {
 
-    @Test
+    @Test(groups = {"Sanity", "Regression"})
     public void verifyAccountRegistration() {
 
         logger.info(" *** Starting  TC001_AccountRegistrationTest  ***");
@@ -39,7 +39,7 @@ public class TC001AccountRegistrationTest extends BaseClass {
             else {
                 logger.error("Test failed.");
                 logger.debug("Debug Logs.");
-                Assert.assertTrue(false);;
+                Assert.assertTrue(false);
             }
 
         } catch (Exception e) {

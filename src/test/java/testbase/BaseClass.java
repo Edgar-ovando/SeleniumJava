@@ -3,6 +3,8 @@ package testbase;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.lang3.RandomStringUtils;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -10,9 +12,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;  //Log4j
@@ -22,10 +27,10 @@ import org.testng.annotations.Parameters;
 public class BaseClass {
 
      protected Logger logger; //Log4j
-     protected WebDriver driver;
+     protected static WebDriver driver;
      protected Properties p;
 
-    @BeforeClass
+    @BeforeClass(groups = {"Sanity","Regression"})
     @Parameters({"os", "browser"})
     public void setup(String os, String br) throws IOException {
 
@@ -63,7 +68,7 @@ public class BaseClass {
         driver.get(p.getProperty("appURL"));
     }
 
-    @AfterClass
+    @AfterClass(groups = {"Sanity","Regression "})
     public void teardown() {
         driver.quit();
     }
@@ -92,4 +97,17 @@ public class BaseClass {
     }
 
 
+    public String captureScreen(String tname) throws  IOException {
+
+        String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(new Date());
+        TakesScreenshot ts = (TakesScreenshot) driver;
+        File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+
+        String targetFilePath = System.getProperty("user.dir") + "//screenshots//" +tname+"-"+ timeStamp + ".png";
+        File targetFile = new File(targetFilePath);
+
+        sourceFile.renameTo(targetFile);
+
+        return targetFilePath;
+    }
 }

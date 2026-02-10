@@ -9,11 +9,12 @@ import org.testng.Assert;
 
 public class TC002LoginTest extends BaseClass {
 
-    @Test
-    public void verifyLogin(){
+    @Test(groups = {"Sanity", "Regression"})
+    public void verifyLogin() {
+
         logger.info(" *** Starting  TC002_LoginTest  ***");
 
-        try{
+        try {
             //HomePage
             HomePage homePage = new HomePage(driver);
             homePage.clickMyAccount();
@@ -32,7 +33,7 @@ public class TC002LoginTest extends BaseClass {
             MyAccountPage myAccountPage = new MyAccountPage(driver);
             Boolean targetPage = myAccountPage.isMyAccountDisplayed();
 
-            Assert.assertEquals(targetPage,true,"Login Failed");
+            Assert.assertEquals(targetPage, true, "Login Failed");
 
         } catch (Exception e) {
             Assert.fail();

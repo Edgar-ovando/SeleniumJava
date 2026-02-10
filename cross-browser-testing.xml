@@ -3,7 +3,7 @@
 
 <suite name="Suite" thread-count="5" parallel="tests">
     <listeners>
-        <listener class-name="selenium.ExtentReport"/>
+        <listener class-name="utilities.ExtentReport"/>
     </listeners>
 
     <test name="chrometest">

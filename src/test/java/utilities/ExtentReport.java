@@ -26,7 +26,7 @@ public class ExtentReport implements ITestListener {
 
     public void onStart(ITestContext testContext) {
 
-        String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(new Date()); //time stamp
+        String timeStamp = new SimpleDateFormat("yyyy.MM.dd_HH:mm:ss").format(new Date()); //time stamp
 
         repName = "Test-Report-" + timeStamp + ".html";
         sparkReporter = new ExtentSparkReporter(".//reports//" + repName); //specify location of the report
@@ -72,8 +72,8 @@ public class ExtentReport implements ITestListener {
         try {
             String imgPath = new BaseClass().captureScreen(result.getName());
             test.addScreenCaptureFromPath(imgPath);
-        } catch (IOException e1) {
-            e1.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
 
         }
     }

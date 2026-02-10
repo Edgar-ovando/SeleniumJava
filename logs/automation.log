@@ -1,0 +1,46 @@
+13:18:52.636 [main] INFO  testcases.TC003LoginDDT - *** Starting  TC003_LoginDDTTest  ***
+13:18:52.687 [main] INFO  testcases.TC003LoginDDT -  Clicked on My Account button
+13:18:53.063 [main] INFO  testcases.TC003LoginDDT -  Clicked on Login button
+13:18:53.064 [main] INFO  testcases.TC003LoginDDT - Provide customer details ...
+13:19:03.178 [main] INFO  testcases.TC003LoginDDT - *** Finish  TC003_LoginDDTTest  ***
+13:25:23.847 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/edgar-ovando/Desktop/JavaProject/Selenium/regression.xml
+
+13:25:24.133 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
+13:25:24.191 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/edgar-ovando/.cache/selenium/chromedriver/mac-arm64/144.0.7559.133/chromedriver
+13:25:29.348 [main] INFO  testcases.TC003LoginDDT - *** Starting  TC003_LoginDDTTest  ***
+13:25:29.408 [main] INFO  testcases.TC003LoginDDT -  Clicked on My Account button
+13:25:29.859 [main] INFO  testcases.TC003LoginDDT -  Clicked on Login button
+13:25:29.860 [main] INFO  testcases.TC003LoginDDT - Provide customer details ...
+13:25:32.479 [main] INFO  testcases.TC003LoginDDT - *** Finish  TC003_LoginDDTTest  ***
+13:25:32.488 [main] INFO  testcases.TC003LoginDDT - *** Starting  TC003_LoginDDTTest  ***
+13:25:32.527 [main] INFO  testcases.TC003LoginDDT -  Clicked on My Account button
+13:25:32.927 [main] INFO  testcases.TC003LoginDDT -  Clicked on Login button
+13:25:32.928 [main] INFO  testcases.TC003LoginDDT - Provide customer details ...
+15:02:57.330 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/edgar-ovando/Desktop/JavaProject/Selenium/regression.xml
+
+15:02:59.121 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
+15:02:59.168 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/edgar-ovando/.cache/selenium/chromedriver/mac-arm64/144.0.7559.133/chromedriver
+15:03:03.225 [main] INFO  testcases.TC002LoginTest -  *** Starting  TC002_LoginTest  ***
+15:03:03.290 [main] INFO  testcases.TC002LoginTest -  Clicked on My Account button
+15:03:03.734 [main] INFO  testcases.TC002LoginTest -  Clicked on Login button
+15:03:03.736 [main] INFO  testcases.TC002LoginTest - Provide customer details ...
+15:15:21.512 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/edgar-ovando/Desktop/JavaProject/Selenium/regression.xml
+
+15:15:21.801 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
+15:15:21.861 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/edgar-ovando/.cache/selenium/chromedriver/mac-arm64/144.0.7559.133/chromedriver
+15:15:26.264 [main] INFO  testcases.TC002LoginTest -  *** Starting  TC002_LoginTest  ***
+15:15:26.336 [main] INFO  testcases.TC002LoginTest -  Clicked on My Account button
+15:15:26.724 [main] INFO  testcases.TC002LoginTest -  Clicked on Login button
+15:15:26.725 [main] INFO  testcases.TC002LoginTest - Provide customer details ...
+15:17:18.243 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  /Users/edgar-ovando/Desktop/JavaProject/Selenium/regression.xml
+
+15:17:18.514 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 144.0.7559.133 (resolved driver for Chrome 144)
+15:17:18.576 [main] INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as /Users/edgar-ovando/.cache/selenium/chromedriver/mac-arm64/144.0.7559.133/chromedriver
+15:17:22.891 [main] INFO  testcases.TC002LoginTest -  *** Starting  TC002_LoginTest  ***
+15:17:22.963 [main] INFO  testcases.TC002LoginTest -  Clicked on My Account button
+15:17:23.349 [main] INFO  testcases.TC002LoginTest -  Clicked on Login button
+15:17:23.350 [main] INFO  testcases.TC002LoginTest - Provide customer details ...

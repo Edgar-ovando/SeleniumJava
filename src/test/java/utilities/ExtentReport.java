@@ -24,16 +24,12 @@ public class ExtentReport implements ITestListener {
 
     String repName;
 
-    public void onStart(ITestContext testContext){
-        /*SimpleDateFormat df = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
-        Date dt = new Date();
-        String currentdatetimestamp = df.format(dt);
-         */
+    public void onStart(ITestContext testContext) {
 
         String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(new Date()); //time stamp
 
-        repName = "Test-Report-"+timeStamp+".html";
-        sparkReporter = new ExtentSparkReporter(".//reports//"+repName); //specify location of the report
+        repName = "Test-Report-" + timeStamp + ".html";
+        sparkReporter = new ExtentSparkReporter(".//reports//" + repName); //specify location of the report
 
         sparkReporter.config().setDocumentTitle("Test Report"); //Title of report
         sparkReporter.config().setReportName("Regression Report"); //Name of the report
@@ -45,60 +41,61 @@ public class ExtentReport implements ITestListener {
         extent.setSystemInfo("Module", "Admin");
         extent.setSystemInfo("Sub Module", "Customers");
         extent.setSystemInfo("User Name", System.getProperty("user.name"));
-        extent.setSystemInfo("Environment","QA");
+        extent.setSystemInfo("Environment", "QA");
 
         String os = testContext.getCurrentXmlTest().getParameter("os");
-        extent.setSystemInfo("Operating System",os);
+        extent.setSystemInfo("Operating System", os);
 
         String browser = testContext.getCurrentXmlTest().getParameter("browser");
-        extent.setSystemInfo("Browser",browser);
+        extent.setSystemInfo("Browser", browser);
 
         List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
-        if(!includedGroups.isEmpty()){
-            extent.setSystemInfo("Groups",includedGroups.toString());
+        if (!includedGroups.isEmpty()) {
+            extent.setSystemInfo("Groups", includedGroups.toString());
         }
     }
 
-    public void onTestSuccess(ITestResult result){
+    public void onTestSuccess(ITestResult result) {
         test = extent.createTest(result.getTestClass().getName());
         test.assignCategory(result.getMethod().getGroups()); // to display groups in report
         test.log(Status.PASS, result.getName() + " got successfully executed");
 
     }
 
-    public void onTestFailure(ITestResult result){
+    public void onTestFailure(ITestResult result) {
         test = extent.createTest(result.getTestClass().getName());
         test.assignCategory(result.getMethod().getGroups());
 
-        test.log(Status.FAIL, result.getName()+" got failed");
+        test.log(Status.FAIL, result.getName() + " got failed");
         test.log(Status.INFO, result.getThrowable().getMessage());
 
-        try{
+        try {
             String imgPath = new BaseClass().captureScreen(result.getName());
             test.addScreenCaptureFromPath(imgPath);
-        }catch (IOException e1){
+        } catch (IOException e1) {
             e1.printStackTrace();
 
         }
     }
 
-    public void onTestSkipped(ITestResult result){
+    public void onTestSkipped(ITestResult result) {
         test = extent.createTest(result.getTestClass().getName());
         test.assignCategory(result.getMethod().getGroups());
-        test.log(Status.SKIP, result.getName()+" got skipped");
+        test.log(Status.SKIP, result.getName() + " got skipped");
         test.log(Status.INFO, result.getThrowable().getMessage());
     }
 
-    public void onFinish(ITestContext testContext){
+    public void onFinish(ITestContext testContext) {
         extent.flush();
 
-        String pathOfExtentReport = System.getProperty("user.dir")+"//reports//"+repName;
+        String pathOfExtentReport = System.getProperty("user.dir") + "//reports//" + repName;
         File extentReport = new File(pathOfExtentReport);
-        try{
+        try {
             Desktop.getDesktop().browse(extentReport.toURI());
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         /*
             //Send an email to your team
             try{URL url = new URL("file:///"+System.getProperty("user.dir")+"\\reports\\"+repName);
@@ -123,7 +120,6 @@ public class ExtentReport implements ITestListener {
 
 
     }
-
 
 
 }

@@ -45,13 +45,7 @@ public class BaseClass {
         {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-
-                ChromeOptions options = new ChromeOptions();
-                options.addArguments("--headless"); // Run without GUI
-                options.addArguments("--no-sandbox"); // Needed in Docker
-                options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
-
-                driver = new ChromeDriver(options);
+                driver = new ChromeDriver();
                 break;
 
             case "firefox":

@@ -68,6 +68,15 @@ public class BaseClass {
         driver.get(p.getProperty("appURL"));
     }
 
+
+
+
+
+
+
+
+
+
     @AfterClass(groups = {"Sanity","Regression "})
     public void teardown() {
         driver.quit();
@@ -95,7 +104,6 @@ public class BaseClass {
         String generatedString = RandomStringUtils.randomAlphabetic(3);
         return (generatedNumber + generatedString);
     }
-
 
     public String captureScreen(String tname) throws  IOException {
 

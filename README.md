@@ -4,10 +4,11 @@
 
 This project is a **UI Test Automation Framework** developed using:
 
-- Selenium WebDriver
-- Java
-- TestNG
-- Maven
+- 🌐 Selenium WebDriver
+- ☕ Java
+- 🧪 TestNG
+- 📦 Maven
+- 📝 Log4j2
 
 The framework automates test scenarios for the demo e-commerce website:
 

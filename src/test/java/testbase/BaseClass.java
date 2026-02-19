@@ -7,6 +7,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -44,7 +45,13 @@ public class BaseClass {
         {
             case "chrome":
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--headless"); // Run without GUI
+                options.addArguments("--no-sandbox"); // Needed in Docker
+                options.addArguments("--disable-dev-shm-usage"); // Avoid shared memory issues
+
+                driver = new ChromeDriver(options);
                 break;
 
             case "firefox":
@@ -60,6 +67,7 @@ public class BaseClass {
             default:
                 throw new RuntimeException("Browser not supported: " + br);
         }
+
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

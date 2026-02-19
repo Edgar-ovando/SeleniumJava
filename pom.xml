@@ -28,15 +28,14 @@
                 </configuration>
             </plugin>
 
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <includes>
-                        <include>**/regression.xml</include>
-                    </includes>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>regression.xml</suiteXmlFile>
+                    </suiteXmlFiles>
                 </configuration>
             </plugin>
 

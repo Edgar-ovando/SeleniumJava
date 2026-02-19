@@ -70,13 +70,6 @@ public class BaseClass {
 
 
 
-
-
-
-
-
-
-
     @AfterClass(groups = {"Sanity","Regression "})
     public void teardown() {
         driver.quit();

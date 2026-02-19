@@ -1,4 +1,4 @@
-<h1>🧪 Selenium Test Automation Framework (Java + TestNG + Maven)</h1>
+<h1>🧪 Selenium Test Automation Framework </h1>
 
 ## 📌 Project Overview
 

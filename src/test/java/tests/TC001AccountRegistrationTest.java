@@ -1,8 +1,8 @@
-package testcases;
+package tests;
 
-import pageobjects.HomePage;
-import pageobjects.RegistrationPage;
-import testbase.BaseClass;
+import pages.HomePage;
+import pages.RegistrationPage;
+import base.BaseClass;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -38,7 +38,7 @@ This makes it ideal for automation practice and framework development.
 ✅ Screenshot Capture on Failure  
 ✅ Parallel Execution Support  
 ✅ Configurable via properties file  
-✅ Reusable utilities  
+✅ Reusable utils  
 
 ---
 
@@ -75,12 +75,12 @@ SeleniumFramework/
 │   │   │   ├── HomePage.java
 │   │   │   └── RegisterPage.java
 │   │   │
-│   │   ├── testcases/
+│   │   ├── tests/
 │   │   │   ├── LoginTest.java
 │   │   │   ├── RegisterTest.java
 │   │   │   └── SearchTest.java
 │   │   │
-│   │   └── utilities/
+│   │   └── utils/
 │   │       ├── ConfigReader.java
 │   │       ├── ScreenshotUtil.java
 │   │       └── DriverFactory.java

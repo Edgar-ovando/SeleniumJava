@@ -3,7 +3,7 @@
 
 <suite name="Suite">
     <listeners>
-        <listener class-name="utilities.ExtentReport"/>
+        <listener class-name="utils.ReportUtils"/>
     </listeners>
 
     <test thread-count="5" name="Test">
@@ -11,9 +11,9 @@
         <parameter name="browser" value="chrome"/>
 
         <classes>
-           <!-- <class name="testcases.TC001AccountRegistrationTest"/> -->
-             <class name="testcases.TC002LoginTest"/>
-           <!-- <class name="testcases.TC003LoginDDT"/> -->
+           <!-- <class name="tests.TC001AccountRegistrationTest"/> -->
+             <class name="tests.TC002LoginTest"/>
+           <!-- <class name="tests.TC003LoginDDT"/> -->
         </classes>
 
     </test>

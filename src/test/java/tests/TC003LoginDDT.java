@@ -1,16 +1,16 @@
-package testcases;
+package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pageobjects.HomePage;
-import pageobjects.LoginPage;
-import pageobjects.MyAccountPage;
-import testbase.BaseClass;
-import utilities.DataProviders;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.MyAccountPage;
+import base.BaseClass;
+import utils.DataUtils;
 
 public class TC003LoginDDT extends BaseClass {
 
-    @Test(dataProvider = "LoginData", dataProviderClass = DataProviders.class, groups = {"Regression"})
+    @Test(dataProvider = "LoginData", dataProviderClass = DataUtils.class, groups = {"Regression"})
     public void verifyLoginDDT(String email, String password, String expectedResult) {
 
         logger.info("*** Starting  TC003_LoginDDTTest  ***");

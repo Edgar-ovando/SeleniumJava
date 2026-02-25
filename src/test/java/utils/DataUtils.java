@@ -1,17 +1,17 @@
-package utilities;
+package utils;
 
 import org.testng.annotations.DataProvider;
 
 import java.io.IOException;
 
-public class DataProviders {
+public class DataUtils {
     //DataProvider 1
 
     @DataProvider(name="LoginData")
     public String[][] getData() throws IOException {
         String path=".//testdata//Opencart-LoginData.xlsx"; //takin xl file from testData
 
-        ExcelUtility xlutil = new ExcelUtility(path); //creating an object for XLUtility
+        ExcelUtils xlutil = new ExcelUtils(path); //creating an object for XLUtility
 
         int totalrows = xlutil.getRowCount("Sheet1");
         int totalcols = xlutil.getCellCount("Sheet1",1);

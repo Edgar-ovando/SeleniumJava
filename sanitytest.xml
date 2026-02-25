@@ -3,14 +3,14 @@
 
 <suite name="Suite">
     <listeners>
-        <listener class-name="utilities.ExtentReport"/>
+        <listener class-name="utils.ReportUtils"/>
     </listeners>
 
     <test thread-count="5" name="Test">
         <parameter name="os" value="Windows"/>
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="testcases.TC001AccountRegistrationTest"/>
+            <class name="tests.TC001AccountRegistrationTest"/>
 
         </classes>
     </test>

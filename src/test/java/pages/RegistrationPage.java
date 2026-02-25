@@ -1,10 +1,11 @@
-package pageobjects;
+package pages;
 
+import base.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegistrationPage extends BasePage{
+public class RegistrationPage extends BasePage {
 
     //Constructor
     public RegistrationPage(WebDriver driver) {

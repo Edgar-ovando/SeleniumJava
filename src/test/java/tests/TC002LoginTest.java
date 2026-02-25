@@ -1,10 +1,10 @@
-package testcases;
+package tests;
 
 import org.testng.annotations.Test;
-import pageobjects.HomePage;
-import pageobjects.LoginPage;
-import pageobjects.MyAccountPage;
-import testbase.BaseClass;
+import pages.HomePage;
+import pages.LoginPage;
+import pages.MyAccountPage;
+import base.BaseClass;
 import org.testng.Assert;
 
 public class TC002LoginTest extends BaseClass {

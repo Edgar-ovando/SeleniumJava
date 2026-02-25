@@ -1,4 +1,4 @@
-package utilities;
+package utils;
 
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
@@ -14,7 +14,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class ExcelUtility {
+public class ExcelUtils {
     public FileInputStream fi;
     public FileOutputStream fo;
     public XSSFWorkbook workbook;
@@ -24,7 +24,7 @@ public class ExcelUtility {
     public CellStyle style;
     String path;
 
-    public  ExcelUtility(String path) {
+    public ExcelUtils(String path) {
         this.path = path;
     }
 
